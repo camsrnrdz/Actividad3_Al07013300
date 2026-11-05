@@ -1,0 +1,39 @@
+print("Ejercicio 14: Altas en el inventario")
+print("Nombre: Camila Serna")
+print("Matrícula: Al07013300")
+print()
+
+inventario = []
+
+termine = False
+
+while termine == False:
+    nuevo = input("Artículo a agregar al inventario (escribe fin para terminar): ")
+
+    # ¿Escribió "fin"?
+    if nuevo == "fin":
+        termine = True
+    # ¿Lo dejó vacío?
+    elif nuevo == "":
+        print("❌ El artículo no puede estar vacío")
+    # ¿Ya ESTÁ en el inventario?
+    elif nuevo in inventario:
+        print("⚠️", nuevo, "ya está registrado en el inventario")
+    else:
+        # Todo bien: lo agregamos al final de la lista
+        inventario.append(nuevo)
+        print("✅ Agregado correctamente. Llevas", len(inventario), "artículos en la lista")
+
+# Mostramos el inventario final
+print()
+print("===== INVENTARIO FINAL DE LA TIENDA =====")
+
+# ¿La lista quedó vacía?
+if len(inventario) == 0:
+    print("📭 No agregaste ningún artículo al inventario")
+else:
+    for i in range(len(inventario)):
+        print(i + 1, ".", inventario[i])
+
+print()
+print("¡Buen trabajo actualizando la base de datos, Camila!")

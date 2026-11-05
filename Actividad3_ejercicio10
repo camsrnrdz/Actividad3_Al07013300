@@ -1,0 +1,42 @@
+print("Ejercicio 10: Tu playlist en el camión")
+print("Nombre: Camila Serna")
+print("Matrícula: Al07013300")
+print()
+
+#  Playlist personalizada
+playlist = ["Dark Horse", "FEIN", "Starboy", 
+            "S&M", "Radio", "Umbrella"]
+
+# Playlist numerada
+print("===== 🎧 MI PLAYLIST =====")
+numero = 1
+for cancion in playlist:
+    print(numero, ".", cancion)
+    numero = numero + 1
+
+print()
+saltar = input("¿Qué canción quieres saltar? ")
+parada = input("¿En qué canción llegas a tu parada? ")
+
+escuchadas = 0
+
+for cancion in playlist:
+
+    if cancion == saltar:
+        print("⏭️ Saltando", cancion)
+        # continue: pasa a la siguiente canción sin escuchar esta
+        continue
+
+    print("🎶 Escuchando", cancion)
+    escuchadas = escuchadas + 1
+
+    if cancion == parada:
+        print("🚏 ¡Llegaste a tu parada, Camila!")
+        # break: dejamos de escuchar
+        break
+else:
+    # Solo entra aquí si el for terminó SIN break
+    print("🎧 Escuchaste toda la playlist completa")
+
+print()
+print("Canciones escuchadas:", escuchadas)

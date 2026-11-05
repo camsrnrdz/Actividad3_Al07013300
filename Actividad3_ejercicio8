@@ -1,0 +1,40 @@
+print("Ejercicio 8: Revisa tu gamertag")
+print("Nombre: Camila")
+print("Al07013300")
+print()
+
+# Pedimos el gamertag
+gamertag = input("Camila18 ")
+
+# Contadores: empiezan en 0
+vocales = 0
+numeros = 0
+caracteres = 0
+
+# "Para cada" letra del gamertag...
+for letra in gamertag:
+    print("🔤", letra)
+
+    # Contamos este caracter
+    caracteres = caracteres + 1
+
+    # ¿La letra ESTÁ en el grupo de vocales?
+    if letra in "aeiouAEIOU":
+        vocales = vocales + 1
+
+    # ¿La letra ESTÁ en el grupo de números?
+    if letra in "0123456789":
+        numeros = numeros + 1
+
+# Ya revisamos todas las letras: mostramos el resumen
+print()
+print("===== RESUMEN DEL GAMERTAG =====")
+print("Total de caracteres:", caracteres)
+print("Total de vocales:", vocales)
+print("Total de números:", numeros)
+
+# ¿No tiene ningún número?
+if numeros == 0:
+    print("💡 Consejo: agrégale al menos un número para que tu gamertag sea único, Uriel")
+else:
+    print("✅ ¡Excelente gamertag, Uriel! Está listo para la acción.")

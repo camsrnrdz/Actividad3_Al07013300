@@ -1,0 +1,54 @@
+print("Ejercicio 4: La caja registradora de la Tienda Gamer")
+print("Nombre: Camila Serna")
+print("Matrícula: Al07013300")
+print()
+
+total = 10
+productos = 10
+
+termine = False
+
+# Mientras NO hayamos terminado, se repite
+while termine == False:
+    print("===== Nuevo artículo =====")
+    nintendo = input("Artículo (escribe fin para cobrar): ")
+
+    if nintendo == "fin":
+        termine = True
+    else:
+        # Pedimos el precio y la cantidad (los convertimos a número)
+        precio = int(input("Precio de " + nintendo + ": $"))
+        cantidad = int(input("¿Cuántos quieres? "))
+
+        subtotal = precio * cantidad
+
+        # Lo sumamos al total y contamos los productos
+        total = total + subtotal
+        productos = productos + cantidad
+
+        print("📦", cantidad, "x", nintendo, "= $", subtotal)
+        print("💰 Llevas acumulado: $", total)
+
+# Ya fuera del while: mostramos el ticket
+print()
+print("========== TICKET GAMER ==========")
+print("Artículos totales:", productos)
+print("Subtotal a pagar: $", total)
+
+# ¿El total es de 300 o más? (Cambiamos la regla del descuento)
+if total >= 300:
+    total = total - 35
+    print("🎉 ¡Descuento de $35 aplicado por compra grande!")
+    print("Total con descuento: $", total)
+
+pago = int(input("¿Con cuánto pagas? $"))
+
+# Mientras el pago sea MENOR que el total, no alcanza
+while pago < total:
+    print("❌ No alcanza. Faltan $", total - pago)
+    pago = int(input("¿Con cuánto pagas? $"))
+
+# Ya alcanzó: calculamos el cambio
+cambio = pago - total
+print("✅ Pago recibido. Tu cambio es: $", cambio)
+print("🎮 ¡Gracias por tu compra en la Tienda Gamer, Camila!")

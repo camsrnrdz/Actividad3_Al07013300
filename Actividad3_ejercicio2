@@ -1,0 +1,41 @@
+print("Ejercicio 2: Menú de la Cafetería Cute")
+print("Nombre: Camila Serna")
+print("Matrícula: Al07013300")
+
+# while True: el menú se repite siempre; la única salida es el break
+while True:
+    # Mostramos el menú
+    print()
+    print("===== ☕ CAFETERÍA CUTE =====")
+    print("1. Ver bebidas")
+    print("2. Ver pasteles y postres")
+    print("3. Ver horario")
+    print("4. Salir")
+
+    # Pedimos la opción
+    opcion = input("Elige una opción: ")
+
+    # Revisamos qué opción eligió
+    if opcion == "1":
+        print("\n--- ☕ BEBIDAS ---")
+        print("🥤 Caramelo Macchiato ... $75")
+        print("🍵 Latte de Vainilla ..... $65")
+        print("🧋 Boba Tea de Taro ...... $80")
+        print("🍓 Frappé de Fresa ....... $70")
+    elif opcion == "2":
+        print("\n--- 🍰 PASTELES Y POSTRES ---")
+        print("🍰 Pastel de Chocolate Belga ... $85")
+        print("🍰 Cheesecake de Frutos Rojos .. $80")
+        print("🍰 Pastel Red Velvet .......... $75")
+        print("🥧 Pay de Limón ............... $60")
+        print("🥐 Croissant de Almendras ...... $45")
+    elif opcion == "3":
+        print("\n--- 🕒 HORARIOS DE ATENCIÓN ---")
+        print("🕒 Lunes a Viernes: 8:00 a 21:00")
+        print("🕒 Sábados y Domingos: 9:00 a 18:00")
+    elif opcion == "4":
+        print("👋 ¡Gracias por visitarnos, Uriel! Te esperamos pronto.")
+        # El cliente eligió Salir: break nos saca del while
+        break
+    else:
+        print("❌ Opción no válida, elige del 1 al 4")

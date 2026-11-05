@@ -1,0 +1,42 @@
+print("Ejercicio 15: Bajas en el inventario")
+print("Nombre: Camila Serna")
+print("Matrícula: Al07013300")
+print()
+
+# El inventario inicial de sneakers
+inventario = ["Adidas", "Jordan 1", "Converse", "Nike", "Vans"]
+
+while True:
+    # Mostramos el inventario numerado
+    print()
+    print("===== INVENTARIO DE SNEAKERS =====")
+    for i in range(len(inventario)):
+        print(i + 1, ".", inventario[i])
+
+    numero = int(input("Número del producto a eliminar (0 para terminar): "))
+
+    if numero == 0:
+        break
+    elif numero < 0:
+        print("❌ Ese número no existe")
+    elif numero > len(inventario):
+        print("❌ Ese número no existe")
+    else:
+        # El número sí existe. Recuerda: casillero = número - 1
+        elegido = inventario[numero - 1]
+        confirmar = input("¿Seguro que quieres eliminar " + elegido + "? (s/n): ")
+
+        if confirmar == "s":
+            # Borramos lo que hay en ese casillero del inventario
+            del inventario[numero - 1]
+            print("🗑️", elegido, "fue eliminado correctamente")
+        else:
+            print("👍 Baja cancelada")
+
+    if len(inventario) == 0:
+        print("📭 El inventario quedó completamente vacío")
+        break
+
+# Ya salimos del while
+print()
+print("Quedaron", len(inventario), "productos en el inventario. ¡Excelente gestión, Camila!")

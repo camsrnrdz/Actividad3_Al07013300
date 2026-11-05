@@ -1,0 +1,34 @@
+print("Ejercicio 1: Inicia sesión en Roblox")
+print("Nombre: Camila Serna")
+print("Matrícula: Al07013300h")
+print()
+
+usuario_correcto = "Camila18"
+contrasena_correcta = "roblox123"
+
+sesion_iniciada = False
+
+# Mientras NO haya iniciado sesión, se repite
+while sesion_iniciada == False:
+
+    usuario = input("Usuario: ")
+    contrasena = input("Contraseña: ")
+
+    # Verificamos si el usuario es correcto
+    if usuario == usuario_correcto:
+
+        # Verificamos si la contraseña es correcta
+        if contrasena == contrasena_correcta:
+            print("✅ ¡Bienvenido,", usuario, "!")
+
+            # La sesión ya inició
+            sesion_iniciada = True
+
+        else:
+            print("❌ La contraseña es incorrecta")
+
+    else:
+        print("❌ Ese usuario no existe")
+
+# Esto se ejecuta cuando ya salió del while
+print("🎮 Cargando tus juegos...")

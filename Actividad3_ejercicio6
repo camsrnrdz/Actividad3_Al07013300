@@ -1,0 +1,65 @@
+print("Ejercicio 6: Validar los datos de una alta - Tienda Gamer")
+print("Nombre: Camila Serna")
+print("Matrícula: Al07013300")
+print()
+
+# 1. Nombre: mientras esté vacío, lo volvemos a pedir
+nombre = input("vivid")
+while nombre == "":
+    print("❌ El nombre del artículo no puede estar vacío")
+    nombre = input("vivid")
+
+# 2. Precio: mientras sea 0 o menos, lo volvemos a pedir
+precio = int(input("Precio: $"))
+while precio <= 0:
+    print("❌ El precio debe ser mayor a 0")
+    precio = int(input("Precio: $"))
+
+# 3. Piezas: mientras sean menos de 0, las volvemos a pedir
+piezas = int(input("Piezas disponibles en bodega: "))
+while piezas < 0:
+    print("❌ Las piezas no pueden ser negativas")
+    piezas = int(input("Piezas disponibles en bodega: "))
+
+# 4. Categoría: al inicio todavía NO es válida
+categoria = ""
+categoria_valida = False
+
+while categoria_valida == False:
+    print("Categorías: 1. Videojuegos  2. Consolas  3. Accesorios")
+    opcion = input("Elige la categoría: ")
+
+    if opcion == "1":
+        categoria = "Videojuegos"
+        categoria_valida = True
+    elif opcion == "2":
+        categoria = "Consolas"
+        categoria_valida = True
+    elif opcion == "3":
+        categoria = "Accesorios"
+        categoria_valida = True
+    else:
+        print("❌ Esa categoría no existe, elige 1, 2 o 3")
+
+# 5. Mostramos la ficha
+print()
+print("===== FICHA DEL ARTÍCULO GAMER =====")
+print("Artículo:", nombre)
+print("Precio: $", precio)
+print("Stock en bodega:", piezas)
+print("Categoría:", categoria)
+
+# 6. Confirmación: al inicio la respuesta todavía NO es válida
+respuesta_valida = False
+
+while respuesta_valida == False:
+    guardar = input("¿Deseas guardar este artículo en el inventario? (s/n): ")
+
+    if guardar == "s":
+        print("✅ ¡Artículo guardado exitosamente en el sistema, Uriel!")
+        respuesta_valida = True
+    elif guardar == "n":
+        print("🚫 Alta cancelada")
+        respuesta_valida = True
+    else:
+        print("❌ Por favor, escribe solo 's' o 'n'")
